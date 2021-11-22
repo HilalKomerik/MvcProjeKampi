@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.Category
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h1>Yeni Kategori Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("AddCategory","Category",FormMethod.Post)) //Başlangıç formu ekleme ve güncelleme işlemlerinde kullanılır.("Üzerinde çalıştığım sayfanın ismi","üzerinde çalıştığım controller",formMethodun değeri ne zaman çalışsın.)
+{
+<div class="form-group">
+    @Html.Label("Kategory Adı")
+    @Html.TextBoxFor(x => x.CategoryName) <!--inputu TextBoxFordan almak daha doğru oluyor-->
+    @Html.ValidationMessageFor(x => x.CategoryName) <!--Hataları gösterelim-->
+    <br /><br />
+    @Html.Label("Açıklamayı Yazınız")
+    @Html.TextBoxFor(x => x.CategoryDescription)
+    @Html.ValidationMessageFor(x => x.CategoryDescription)
+    <br /><br />
+    <button>Kaydet</button>
+</div>
+}
+
+
+<!--<form class="form-group" method="post">--><!--method=form içindeki şeyler ne zaman çalışsın bunu belirtiyoruz(ÖRN post işlemi olduğunda)-->
+    <!--<input type="text" placeholder="Kategori Adı" name="CategoryName" class="form-control" />--> <!--placeholder=kutunun içinde pasif olarak yazan kısım -->
+    <!--<br />
+    <input type="text" placeholder="Açıklama giriniz" name="CategoryDescription" class="form-control" /> 
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+
+</form>-->

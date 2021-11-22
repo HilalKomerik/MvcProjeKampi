@@ -1,0 +1,51 @@
+﻿@using EntityLayer.Concrete
+@model List<Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>İstatistikler</h1>
+
+<div class="">
+    <div class="float-left m-4 text-center " style="background-color:rgb(0 255 144);
+        width: 250px;
+        height: 150px
+        ;padding-top:50px;
+        ">
+        Toplam kategori sayısı
+        <p>@ViewData["CategoryCount"]</p>
+    </div>
+    <div class="float-left m-4 text-center " style="background-color: salmon;
+        width: 250px;
+        height: 150px
+        ;padding-top:50px;
+        ">
+        Yazılım kategorisindeki başlık sayısı
+        <p>@ViewData["CategoryHeadingCount"]</p>
+    </div>
+    <div class="float-left m-4 text-center " style="background-color: rgb(0 255 255);
+        width: 250px;
+        height: 150px
+        ;padding-top:50px;
+        ">
+        Yazar adında 'a' harfi geçen yazar sayısı
+        <p>@ViewData["WriterWithALetterCount"]</p>
+    </div>
+    <div class="float-left m-4 text-center " style="        background-color:sandybrown;
+        width: 250px;
+        height: 150px
+        ;padding-top:50px;
+        ">
+        En fazla başlığa sahip kategori adı
+        <p>@ViewData["CategoryNameMaxHeading"]</p>
+    </div>
+    <div class="float-left m-4 text-center " style="        background-color:rgb(240 119 155);
+        width: 250px;
+        height: 150px
+        ;padding-top:30px;
+        ">
+        Kategori tablosunda durumu true olan kategoriler ile false olan kategoriler arasındaki sayısal fark
+        <p>@ViewData["DifferenceOfTruAndFalse"] </p>
+    </div>
+</div>
